@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Data Atelier - Initial Scaffold</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <span class="surprise-glass" aria-hidden="true"></span>
+
+    <header class="topbar">
+      <a class="brand" href="#intro" aria-label="Back to top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span id="siteTitle">My Data Atelier</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Page navigation">
+        <a href="#intro">Profile</a>
+        <a href="#data">Data View</a>
+        <a href="#easter-egg">Interaction</a>
+      </nav>
+
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="section intro-section" id="intro" aria-labelledby="introTitle">
+        <div class="section-inner">
+          <div class="section-heading profile-heading">
+            <div>
+              <h1 id="introTitle">Profile</h1>
+            </div>
+          </div>
+
+          <div class="intro-layout">
+            <figure class="portrait-frame" id="portraitFrame">
+              <img id="profileImage" src="images/figure0.jpg" alt="Profile representative image" />
+              <figcaption id="imageCaption">Click the image to change it.</figcaption>
+            </figure>
+
+            <div class="profile-copy">
+              <div class="profile-selector" role="group" aria-label="Switch profile page">
+                <button class="segment is-active" type="button" data-profile-page="identity" aria-pressed="true">
+                  Identity
+                </button>
+                <button class="segment" type="button" data-profile-page="intro" aria-pressed="false">
+                  Intro
+                </button>
+              </div>
+
+              <div class="profile-pages">
+                <dl class="profile-details profile-page is-active" id="profileIdentity" aria-label="Profile identity"></dl>
+                <div class="intro-card profile-page" id="profileIntro" aria-label="Profile introduction" hidden>
+                  <div class="favorite-question">
+                    <h3 class="favorite-headline">My Favorite <span id="favoriteQuestionText">___</span></h3>
+                    <div class="favorite-answer" id="favoriteAnswer" aria-live="polite" data-empty="true">
+                      Q&amp;A pairs pending.
+                    </div>
+                    <button class="secondary-action favorite-action" id="favoriteQuestionButton" type="button">
+                      <span class="recommend-icon" aria-hidden="true"></span>
+                      <span>Pick Another</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section data-section" id="data" aria-labelledby="dataTitle">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <h2 id="dataTitle">Data Visualization</h2>
+            </div>
+          </div>
+
+          <div class="data-panel-grid" aria-label="Static CSV data visualization panels">
+            <article class="data-panel contribution-panel" aria-labelledby="githubContributionsTitle">
+              <div class="data-panel-header">
+                <div>
+                  <h3 id="githubContributionsTitle">My GitHub Contributions</h3>
+                  <p>Powered by GitHub</p>
+                </div>
+              </div>
+
+              <div
+                class="contribution-grid"
+                id="githubContributionGrid"
+                role="img"
+                aria-label="GitHub contribution heatmap awaiting CSV data"
+              ></div>
+
+              <div class="intensity-legend" aria-label="Contribution intensity legend">
+                <span>Low</span>
+                <span class="legend-swatch level-1" aria-hidden="true"></span>
+                <span class="legend-swatch level-2" aria-hidden="true"></span>
+                <span class="legend-swatch level-3" aria-hidden="true"></span>
+                <span class="legend-swatch level-4" aria-hidden="true"></span>
+                <span>High</span>
+              </div>
+            </article>
+
+            <article class="data-panel steps-panel" aria-labelledby="dailyStepsTitle">
+              <div class="data-panel-header">
+                <div>
+                  <h3 id="dailyStepsTitle">My Daily Steps</h3>
+                  <p>Powered by Samsung Health</p>
+                </div>
+              </div>
+
+              <div
+                class="vertical-bar-chart"
+                id="dailyStepsChart"
+                role="img"
+                aria-label="Daily steps vertical bar chart awaiting CSV data"
+              ></div>
+            </article>
+
+            <article class="data-panel songs-panel" aria-labelledby="annualSongsTitle">
+              <div class="data-panel-header">
+                <div>
+                  <h3 id="annualSongsTitle">My Annual List of Songs of 2025</h3>
+                  <p>Powered by QQ Music</p>
+                </div>
+              </div>
+
+              <div
+                class="horizontal-bar-chart"
+                id="annualSongsChart"
+                role="img"
+                aria-label="Annual song list horizontal bar chart awaiting CSV data"
+              ></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section egg-section" id="easter-egg" aria-labelledby="eggTitle">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <h2 id="eggTitle">Interaction</h2>
+            </div>
+          </div>
+
+          <div class="egg-layout">
+            <article class="surprise-tool blocks-generator" aria-labelledby="blocksGeneratorTitle">
+              <div class="surprise-tool-header">
+                <h3 id="blocksGeneratorTitle">Surprise</h3>
+              </div>
+
+              <div class="blocks-generator-grid">
+                <figure class="surprise-preview">
+                  <img id="surpriseImagePreview" src="surprise/figure0.jpeg" alt="Surprise palette source" />
+                  <div class="surprise-swatches" id="surpriseSwatches" aria-label="Sampled surprise colors"></div>
+                </figure>
+
+                <div class="egg-controls" aria-label="Colorful blocks controls">
+                  <p class="surprise-tip">Upload an image to sample its colors, adjust intensity, then trigger the surprise.</p>
+
+                  <label class="upload-action" for="surpriseImageInput">
+                    <span class="upload-icon" aria-hidden="true"></span>
+                    <span>Upload Image</span>
+                    <input id="surpriseImageInput" type="file" accept="image/*" />
+                  </label>
+
+                  <label class="range-field" for="energyRange">
+                    <span>Intensity</span>
+                    <input id="energyRange" type="range" min="1" max="5" value="3" />
+                  </label>
+
+                  <button class="primary-action" id="sparkButton" type="button">
+                    <span class="action-icon" aria-hidden="true"></span>
+                    <span>Trigger Surprise</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article class="surprise-tool song-recommender" aria-labelledby="songRecommenderTitle">
+              <div>
+                <h3 id="songRecommenderTitle">What'd you like to listen to?</h3>
+              </div>
+
+              <div class="song-recommendation" id="songRecommendation" aria-live="polite">
+                <span class="recommend-title">Song list loading</span>
+                <span class="recommend-author">Recommendation pending</span>
+              </div>
+
+              <div class="song-actions">
+                <button class="secondary-action" id="songRecommendButton" type="button">
+                  <span class="recommend-icon" aria-hidden="true"></span>
+                  <span>Pick a Song</span>
+                </button>
+                <button class="secondary-action" id="songPlayButton" type="button" disabled>
+                  <span class="play-icon" aria-hidden="true"></span>
+                  <span>Play</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-credit">Constructed by Xu Shibo using CodeX, assisted by GPT-5.5.</span>
+      <a class="footer-top-link" href="#intro">Back to top</a>
+    </footer>
+
+    <script src="js/site-data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
